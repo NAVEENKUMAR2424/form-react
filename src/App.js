@@ -1,21 +1,22 @@
 import React from 'react';
 import './App.css';
 import { useFormik } from 'formik';
-import { Schema } from 
-
+import { Schema } from './Schema';
 
 function App() {
-  const {formik} = useFormik({
+  const formik = useFormik({
     initialValues: {
-      username:'',
+      username: '',
       email: '',
-      password:'',
-      cpass:''
+      password: '',
+      cpass: '',
     },
-    validationSchema: Schema
+    validationSchema: Schema,
+    onSubmit: (values) => {
+      // Handle form submission logic here
+      console.log(values);
+    },
   });
-
-
 
   return (
     <div className="App">
