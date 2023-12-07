@@ -18,6 +18,20 @@ function App() {
     },
   });
 
+
+
+
+function App() {
+  const {formik} = useFormik({
+    initialValues: {
+      username:'',
+      email: '',
+      password:'',
+      cpass:''
+    },
+    validationSchema: Schema
+  });
+
   return (
     <div className="App">
       <h1>Login Form</h1>
@@ -90,6 +104,8 @@ function App() {
       </form>
     </div>
   );
+}
+
 }
 
 export default App;
